@@ -18,7 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
  * @author aldy ahmad fauzi
  */
 @Controller
-public class dataForm {
+public class dataController {
     
     @RequestMapping("/data")
     public String form(@RequestParam(value = "variableA") String name,
@@ -38,9 +38,7 @@ public class dataForm {
         antar.addAttribute("antar3", gambar);
         
         return "viewhalaman";
-        
-        
-        
+         
         
     }
     
