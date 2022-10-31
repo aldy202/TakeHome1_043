@@ -25,17 +25,17 @@ public class dataController {
             @RequestParam(value = "variableB") String location,
             @RequestParam(value = "variableC") MultipartFile photo,
             Model antar)
-            
+    
             
     throws IOException{
         
-        byte[] imge = photo.getBytes();
-        String base64 = Base64.encodeBase64String(imge);
-        String gambar = "data:image/png;base64".concat(base64);
+        byte[] img = photo.getBytes();
+        String base64Image = Base64.encodeBase64String(img);
+        String imglink = "data:image/png;base64,".concat(base64Image);
         
         antar.addAttribute("antar1", name);
         antar.addAttribute("antar2", location);
-        antar.addAttribute("antar3", gambar);
+        antar.addAttribute("antar3", imglink);
         
         return "viewhalaman";
          
